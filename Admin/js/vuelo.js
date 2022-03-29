@@ -27,6 +27,9 @@ const GetVuelos = async () => {
         console.log(error)
     }
 }
+async function func () {
+
+}
 
 const ShowAddVuelo = async () => {
     $(".addVueloForm").removeAttr("hidden")
