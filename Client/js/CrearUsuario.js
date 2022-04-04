@@ -21,3 +21,12 @@ async function AgregarUsuario() {
     console.log(data)
 }
 
+function VerificarClave() {
+    const password1DOM = document.getElementById("password")
+    const password2DOM = document.getElementById("password2")
+    if (password1DOM.value == password2DOM.value) {
+        document.getElementById("warning").innerHTML = "Contraseña Correcta"
+    } else {
+        document.getElementById("warning").innerHTML = "Contraseña debe ser igual a la ingresada en el campo anterior"
+    }
+}
