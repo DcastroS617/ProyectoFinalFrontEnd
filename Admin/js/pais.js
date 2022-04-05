@@ -26,7 +26,7 @@ const GetPaises = async () => {
 
 const MostrarEditarPais = (id) => {
 
-    $(".wholetable").attr('hidden', true)
+    $(".wholetable").slideUp()
     $(".editPais").removeAttr('hidden')
 
     const NombrePaisDOM = document.querySelector('.editNombre > label ~ input')
@@ -66,11 +66,11 @@ const EditarPais = async () => {
 
 const CerrarEditarPaisForm = () => {
     $('.editPais').attr('hidden', true)
-    $(".wholetable").removeAttr('hidden')
+    $(".wholetable").slideDown()
 }
 
 const MostrarAgregarPais = () => {
-    $(".wholetable").attr('hidden', true)
+    $(".wholetable").slideUp()
     $(".addPais").removeAttr('hidden')
 }
 
@@ -96,18 +96,22 @@ const AgregarPais = async () => {
 
 const CerrarAgregarPaisForm = () => {
     $('.addPais').attr('hidden', true)
-    $(".wholetable").removeAttr('hidden')
+    $(".wholetable").slideDown()
+    $('.addNombre > label ~ input').val('')
+    $('.addProvincia > label ~ input').val('')
+    $('.addBandera > label ~ input').val('')
 }
 
 const EliminarPais = async (id) => {
     const paisEscogido = ListaPaises[id]
     
     const {data} = await axios.delete(uri + 'origen/' + paisEscogido.Id)
+    await GetPaises()
     console.log(data)
 }
 
-const main = () => {
-    GetPaises()
+const main = async () => {
+    await GetPaises()
 }
 
 main()

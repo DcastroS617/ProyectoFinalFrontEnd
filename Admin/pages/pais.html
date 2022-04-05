@@ -24,22 +24,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">Menú Principal</a>
+                        <a class="nav-link" aria-current="page" href="#">Menú Principal</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown" role="button">Administrador</a>
+                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown"
+                            role="button">Administrador</a>
                         <ul class="dropdown-menu" aria-labelledby="vueloDropdown">
-                            <li><a class="dropdown-item" href="../pages/vuelo.html">Vuelos</a></li>
-                            <li><a class="dropdown-item" href="../pages/pais.html">Paises</a></li>
-                            <li><a class="dropdown-item" href="../pages/puerta_aeropuerto.html">Puertas del Aeropuerto</a></li>
                             <li><a class="dropdown-item" href="../pages/aerolinea.html">Aerolineas</a></li>
+                            <li><a class="dropdown-item" href="../pages/consecutivo.html">Consecutivos</a></li>
+                            <li><a class="dropdown-item" href="../pages/pais.html">Paises</a></li>
+                            <li><a class="dropdown-item" href="../pages/puerta_aeropuerto.html">Puertas del
+                                    Aeropuerto</a></li>         
+                            <li><a class="dropdown-item" href="../pages/vuelo.html">Vuelos</a></li>
+                            
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown" role="button">Seguridad</a>
+                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown"
+                            role="button">Seguridad</a>
                         <ul class="dropdown-menu" aria-labelledby="vueloDropdown">
-                            <li><a class="dropdown-item" href="../../Client/pages/CrearUsuario.html">Crear Usuario</a></li>
-                            <li><a class="dropdown-item" href="../../Client/pages/CambiarContra.html">Cambiar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="../../Client/pages/CrearUsuario.html">Crear Usuario</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../../Client/pages/CambiarContra.html">Cambiar
+                                    Contraseña</a></li>
                             <li><a class="dropdown-item" href="../../Client/pages/Roles.html">Roles</a></li>
                         </ul>
                     </li>
@@ -68,7 +75,7 @@
         </div>
         <div class="container editPais" hidden>
             <div class="form">
-                <p class="fs-3">Editar un país</p>
+                <p class="fs-3 fw-light">Editar un país</p>
                 <div class="form-group editNombre">
                     <label class="form-label">Nombre del país</label>
                     <input placeholder="nombre" type="text" class="form-control"/>
@@ -89,7 +96,7 @@
         </div>
         <div class="container addPais" hidden>
             <div class="form">
-                <p class="fs-3">Agregar un país</p>
+                <p class="fs-3 fw-light">Agregar un país</p>
                 <div class="form-group addNombre">
                     <label class="form-label">Nombre del país</label>
                     <input placeholder="nombre" type="text" class="form-control"/>

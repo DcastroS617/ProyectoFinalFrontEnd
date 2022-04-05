@@ -27,13 +27,13 @@ const GetVuelos = async () => {
         console.log(error)
     }
 }
-async function func () {
 
-}
-
-const ShowAddVuelo = async () => {
+const MostrarAgregarVuelo = async () => {
     $(".addVueloForm").removeAttr("hidden")
-    $(".wholetable").attr("hidden", true)
+    $(".wholetable").slideUp()
+    $("#addaerolinea").empty()
+    $("#adddestino").empty()
+    $("#addpuerta").empty()
 
     let aerolineas = await GetAerolinea()
     let destinos = await GetDestino()
@@ -94,7 +94,8 @@ const AgregarVuelo = async () => {
 
 const CerrarAgregarVueloForm = () => {
     $(".addVueloForm").attr("hidden", true)
-    $(".wholetable").removeAttr("hidden")
+    $(".wholetable").slideDown()
+    $("#adddescription").val('')
 }
 
 const MostrarEditarVuelo = async (id) => {
@@ -103,7 +104,7 @@ const MostrarEditarVuelo = async (id) => {
     $("#editdestino").empty()
     $("#editpuerta").empty()
     $(".editVueloForm").removeAttr("hidden")
-    $(".wholetable").attr("hidden", true)
+    $(".wholetable").slideUp()
 
     let vuelo = ListaVuelos[id]
     console.log(vuelo)
@@ -162,7 +163,7 @@ const EditarVuelo = async () => {
         "PuertaAeropuertoId": puertaFound.Id
     }
 
-    let { datos } = await axios.put(uri + "vuelo/" + vueloId, editVuelo, {
+    let { data } = await axios.put(uri + "vuelo/" + vueloId, editVuelo, {
         "Accept": "application/json",
         "Content-type": "application/json"
     })
@@ -173,7 +174,7 @@ const EditarVuelo = async () => {
 
 const CerrarEditarVueloForm = () => {
     $(".editVueloForm").attr('hidden', true)
-    $(".wholetable").removeAttr("hidden")
+    $(".wholetable").slideDown()
 }
 
 const EliminarVuelo = async (id) => {
