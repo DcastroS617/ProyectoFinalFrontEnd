@@ -35,3 +35,12 @@ const GetPuerta = async () => {
     })
     return returnList
 }
+
+const GetConsecutivo = async () => {
+    let { data } = await axios.get(uri + "consecutivo")
+    let returnList = []
+    data.forEach(puerta => {
+        returnList.push(puerta)
+    })
+    return returnList
+}

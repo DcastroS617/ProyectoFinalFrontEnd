@@ -27,22 +27,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">Menú Principal</a>
+                        <a class="nav-link" aria-current="page" href="#">Menú Principal</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown" role="button">Administrador</a>
+                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown"
+                            role="button">Administrador</a>
                         <ul class="dropdown-menu" aria-labelledby="vueloDropdown">
-                            <li><a class="dropdown-item" href="../pages/vuelo.html">Vuelos</a></li>
-                            <li><a class="dropdown-item" href="../pages/pais.html">Paises</a></li>
-                            <li><a class="dropdown-item" href="../pages/puerta_aeropuerto.html">Puertas del Aeropuerto</a></li>
                             <li><a class="dropdown-item" href="../pages/aerolinea.html">Aerolineas</a></li>
+                            <li><a class="dropdown-item" href="../pages/consecutivo.html">Consecutivos</a></li>
+                            <li><a class="dropdown-item" href="../pages/pais.html">Paises</a></li>
+                            <li><a class="dropdown-item" href="../pages/puerta_aeropuerto.html">Puertas del
+                                    Aeropuerto</a></li>         
+                            <li><a class="dropdown-item" href="../pages/vuelo.html">Vuelos</a></li>
+                            
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown" role="button">Seguridad</a>
+                        <a class="nav-link dropdown-toggle" id="vueloDropdown" data-bs-toggle="dropdown"
+                            role="button">Seguridad</a>
                         <ul class="dropdown-menu" aria-labelledby="vueloDropdown">
-                            <li><a class="dropdown-item" href="../../Client/pages/CrearUsuario.html">Crear Usuario</a></li>
-                            <li><a class="dropdown-item" href="../../Client/pages/CambiarContra.html">Cambiar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="../../Client/pages/CrearUsuario.html">Crear Usuario</a>
+                            </li>
+                            <li><a class="dropdown-item" href="../../Client/pages/CambiarContra.html">Cambiar
+                                    Contraseña</a></li>
                             <li><a class="dropdown-item" href="../../Client/pages/Roles.html">Roles</a></li>
                         </ul>
                     </li>
@@ -50,13 +57,13 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-2">
-        <div class=" row">
-            <p class="fs-3 fw-light col-sm-9">Vuelos Disponibles</p>
-            <input class="btn btn-outline-info col-sm-2 m-sm-2" onclick="ShowAddVuelo()" type="button"
-                value="Añadir Vuelo" />
-        </div>
+    <div class="container mt-2">      
         <div class="wholetable">
+            <div class=" row">
+                <p class="fs-3 fw-light col-sm-9">Vuelos Disponibles</p>
+                <input class="btn btn-outline-info col-sm-2 m-sm-2" onclick="MostrarAgregarVuelo()" type="button"
+                    value="Añadir Vuelo" />
+            </div>
             <table class="table tablevuelo">
                 <thead>
                     <tr>
@@ -74,7 +81,7 @@
         </div>
         <div class="container mt-2 editVueloForm" hidden>
             <div class="form">
-                <h4>Editar el vuelo</h4>
+                <h4><span class="fs-3 fw-light p-sm-1">Editar el vuelo</span></h4>
                 <div class="row editdescripcion">
                     <label class="form-label">Clima</label>
                     <input type="text" class="form-control" />
@@ -99,7 +106,7 @@
         </div>
         <div class="container mt-2 addVueloForm" hidden>
             <div class="form">
-                <h4><span class="fs-3 p-sm-1 vuelo_text_add">Añadir el vuelo</span></h4>
+                <h4><span class="fs-3 fw-light p-sm-1">Añadir el vuelo</span></h4>
                 <div class="row adddescripcion">
                     <label class="form-label">Clima</label>
                     <input type="text" class="form-control" id="adddescription"/>
