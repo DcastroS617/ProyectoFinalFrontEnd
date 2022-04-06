@@ -1,42 +1,52 @@
 
-
-
 async function NuevaContra() {
 
     const url = "https://proyectofinalsw.azurewebsites.net/api/"
-    let Id = localStorage.getItem("editID")
-    let Username = localStorage.getItem("editUser")
-
-    const npasswordDOM = document.getElementById("npassword")
-    const password2DOM = document.getElementById("password2")
-
-    let Email = localStorage.getItem("editEmail")
-    let Role = localStorage.getItem("editRole")
-
+    let usuario=localStorage.getItem("usuarioLogin")
+    usuario=JSON.parse(usuario)
+    const password2 = localStorage.getItem("contrasena2")
 
     const objeto = {
-        password: passwordDOM.value,
-        npassword: npasswordDOM.value
+        Id: usuario.Id,
+        Username: usuario.Username,
+        Contrasena: password2,
+        Email: usuario.Email,
+        Role: usuario.Role,
+        PreguntaSeguridad: usuario.PreguntaSeguridad,
+        RespuestaSeguridad: usuario.RespuestaSeguridad
        
     }
-    const { data } = await axios.put(url + "user", password2DOM, objeto, {
+    const { data } = await axios.put(url + "user/"+ usuario.Id, objeto, {
         "Content-type": "application/json",
         "Accept": "application/json"
     })
-    console.log(data)
-}// JavaScript source code
+    console.log(objeto)
+    window.location="../index.html"
+}
+
+
 
 function VerificarClave() {
-    const password1DOM = document.getElementById("password")
-    const password2DOM = document.getElementById("password2")
-    if (password1DOM.value == password2DOM.value) {
-        document.getElementById("warning").innerHTML = "Contraseña Correcta"
-    } else {
-        document.getElementById("warning").innerHTML = "Contraseña debe ser igual a la ingresada en el campo anterior"
+    const password1 = localStorage.getItem("contrasena1")
+    const password2 = localStorage.getItem("contrasena2")
+    if (password1 !== password2) {
+        throw new Error("ContraseÃ±as no son iguales")
     }
 }
+
+function CambiarContrasenaEvento(){
+    try{
+        VerificarClave()
+        NuevaContra()
+    }catch(Error){
+        alert(Error)
+    }
+}
+
+
+
 function contrasenaOnchageEvento() {
-    const npasswordDOM = document.querySelector("#npasswordtxt")
+    const npasswordDOM = document.getElementById("npasswordtxt")
     const password2DOM = document.getElementById("password2txt")
     console.log(npasswordDOM)
     console.log(password2DOM)
