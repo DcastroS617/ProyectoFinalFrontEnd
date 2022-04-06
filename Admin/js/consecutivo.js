@@ -1,4 +1,6 @@
 let ListaConsecutivos = []
+let ListaCantidad = []
+let ListaDescripcion = []
 let Entidades = {}
 let constantValues = ["PA01", "OR01", "VL01", "CM01", "RS01", "AL01"]
 
@@ -16,16 +18,36 @@ const GetConsecutivos = async () => {
 
 const FiltrarConsecutivos = () => {
     let obj = Object.values(Entidades)
+    console.log(obj)
     for(let i = 0; i < obj.length; i++){
-        if(i % 2 === 0){
-            console.log(obj[i])
-        }   
+        let fila = `
+        <tr>
+        ${(i % 2 === 0) ? `<td>${obj[i]}</td> ` : `<td>${obj[i]}</td>`}
+        </tr>`
+        $(".tableconsecutivo > tbody").append(fila)
     }
+}
+
+const MostrarConsecutivos = () => {
+    $(".tableconsecutivo tbody").empty()
+    const consecutivos = ListaCantidad.concat(ListaDescripcion)
+    let obj = Object.values(Entidades)
+    obj.forEach((consecutivo, index) => {
+        let fila = `
+        <tr>
+            <td>${index}</td>
+            <td>${consecutivo.cantidad}</td>
+            <td>${consecutivo.descripcion}</td>
+        </tr>`
+        $(".tableconsecutivo > tbody").append(fila)
+    })
+
 }
 
 const main = async () => {
     await GetConsecutivos()
     FiltrarConsecutivos()
+    MostrarConsecutivos()
 }
 
 main()

@@ -44,3 +44,21 @@ const GetConsecutivo = async () => {
     })
     return returnList
 }
+
+const GetBitacora = async () => {
+    let {data} = await axios.get(uri + "bitacora")
+    let returnList = []
+    data.forEach(bitacora => {
+        returnList.push(bitacora)
+    })
+    return returnList
+}
+
+const GetError = async () => {
+    let {data} = await axios.get(uri + "error")
+    let returnList = []
+    data.forEach(error => {
+        returnList.push(error)
+    })
+    return returnList
+}
